@@ -7,11 +7,13 @@ use GuzzleHttp\Exception\ClientException;
 class Service extends Base
 {
 
-    public static function Server(Array $data = []) {
+    public const BASE_URL = "https://gateway.apibrasil.io/api/v2/";
+
+    public static function Server(array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/servers/";
+            $base_uri = self::BASE_URL . "servers/";
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -34,11 +36,11 @@ class Service extends Base
 
     }
 
-    public static function Auth(Array $data = []) {
+    public static function Auth(array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/";
+            $base_uri = self::BASE_URL;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -60,15 +62,15 @@ class Service extends Base
 
     }
 
-    public static function Plan(String $action = '', Array $data = []) {
+    public static function Plan(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/plans/";
+            $base_uri = self::BASE_URL . "plans/";
             $method = $data['method'] ?? 'POST';
 
             if($action == "me"){
-                $base_uri = "https://gateway.apibrasil.io/api/v2/plan/";
+                $base_uri = self::BASE_URL . "plan/";
             }
             
             $headers = [
@@ -91,11 +93,11 @@ class Service extends Base
 
     }
     
-    public static function Profile(Array $data = []) {
+    public static function Profile(array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/profile/";
+            $base_uri = self::BASE_URL . "profile/";
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -118,11 +120,11 @@ class Service extends Base
 
     }
 
-    public static function Device(String $action = '', Array $data = []) {
+    public static function Device(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/devices/";
+            $base_uri = self::BASE_URL . "devices/";
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -150,11 +152,11 @@ class Service extends Base
 
     }
 
-    public static function WhatsApp(String $action = '', Array $data = []) {
+    public static function WhatsApp(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/whatsapp/";
+            $base_uri = self::BASE_URL . "whatsapp/";
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -182,11 +184,11 @@ class Service extends Base
 
     }
 
-    public static function Vehicles(String $action = '', Array $data = []) {
+    public static function Vehicles(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/vehicles/".$action;
+            $base_uri = self::BASE_URL . "vehicles/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -213,11 +215,11 @@ class Service extends Base
 
     }
 
-    public static function Correios(String $action = '', Array $data = []) {
+    public static function Correios(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/correios/".$action;
+            $base_uri = self::BASE_URL . "correios/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -244,11 +246,11 @@ class Service extends Base
 
     }
 
-    public static function CNPJ(String $action = '', Array $data = []) {
+    public static function CNPJ(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/dados/".$action;
+            $base_uri = self::BASE_URL . "dados/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -275,11 +277,11 @@ class Service extends Base
 
     }
 
-    public static function CEP(String $action = '', Array $data = []) {
+    public static function CEP(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/cep/".$action;
+            $base_uri = self::BASE_URL . "cep/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -306,11 +308,11 @@ class Service extends Base
 
     }
 
-    public static function HoliDays(String $action = '', Array $data = []) {
+    public static function HoliDays(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/holidays/".$action;
+            $base_uri = self::BASE_URL . "holidays/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
@@ -337,11 +339,11 @@ class Service extends Base
 
     }
     
-    public static function DDD(String $action = '', Array $data = []) {
+    public static function DDD(String $action = '', array $data = []) {
 
         try {
 
-            $base_uri = "https://gateway.apibrasil.io/api/v2/ddd/".$action;
+            $base_uri = self::BASE_URL . "ddd/".$action;
             $method = $data['method'] ?? 'POST';
             
             $headers = [
