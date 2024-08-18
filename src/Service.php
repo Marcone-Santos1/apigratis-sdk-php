@@ -7,7 +7,7 @@ use GuzzleHttp\Exception\ClientException;
 class Service extends Base
 {
 
-    public const BASE_URL = "https://gateway.apibrasil.io/api/v2/";
+    private const BASE_URL = "https://gateway.apibrasil.io/api/v2/";
 
     public static function Server(array $data = []) {
 
